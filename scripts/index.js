@@ -86,7 +86,29 @@ let noButton = document.getElementById('no');
 
 noButton.addEventListener('mouseover', function(e) {
   noButton.style.cursor = 'not-allowed';
+ // Display the shy message //delete from here
+  const shyMessage = document.createElement('div');
+  shyMessage.id = 'shy-message';
+  shyMessage.textContent = "pls don't click him, he's shy";
+  shyMessage.style.position = 'absolute';
+  shyMessage.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+  shyMessage.style.color = 'white';
+  shyMessage.style.padding = '10px';
+  shyMessage.style.borderRadius = '5px';
+  shyMessage.style.fontSize = '12px';
+  shyMessage.style.zIndex = '1000';
+  shyMessage.style.pointerEvents = 'none';
+  shyMessage.style.left = `${e.pageX + 10}px`; // Position near cursor
+  shyMessage.style.top = `${e.pageY + 10}px`;
+  
+  document.body.appendChild(shyMessage);
 
+  // Remove the message after a delay
+  setTimeout(() => {
+    if (shyMessage.parentNode) {
+      shyMessage.parentNode.removeChild(shyMessage);
+    }
+  }, 2000); //delete to here
   // Calculate the new position of the button, ensuring it doesn't move more than 50px away from its current position
   let randomX = noButton.offsetLeft + (Math.random() * 320 - 160);
   let randomY = noButton.offsetTop + (Math.random() * 320 - 160);
