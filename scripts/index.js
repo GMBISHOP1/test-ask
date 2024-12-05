@@ -6,12 +6,13 @@ dialog.classList.add('dialog');
 document.body.style.userSelect = 'none';
 
 const dateSuggestions = [
-  "so... i wanted to ask you if you'd be willing to go on a date with me",
    "so... i wanted to ask you if you'd be willing to go on a date with me",
    "so... i wanted to ask you if you'd be willing to go on a date with me",
    "so... i wanted to ask you if you'd be willing to go on a date with me",
    "so... i wanted to ask you if you'd be willing to go on a date with me",
    "so... i wanted to ask you if you'd be willing to go on a date with me",
+   "so... i wanted to ask you if you'd be willing to go on a date with me"
+
 ];
 
 function getRandomDateSuggestion() {
